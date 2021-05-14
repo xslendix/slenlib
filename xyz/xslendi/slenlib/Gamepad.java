@@ -199,12 +199,28 @@ public class Gamepad {
 
             switch (s.getKey()) {
                 case LEFT:
-                    stick.setX(gamepad.left_stick_x);
-                    stick.setY(gamepad.left_stick_y);
+                    if (gamepad.left_stick_x < -0.1f && gamepad.left_stick_x > 0.1f)
+                        stick.setX(gamepad.left_stick_x);
+                    else
+                        stick.setX(0f);
+
+                    if (gamepad.left_stick_y < -0.1f && gamepad.left_stick_y > 0.1f)
+                        stick.setY(gamepad.left_stick_y);
+                    else
+                        stick.setY(0f);
+
                     break;
                 case RIGHT:
-                    stick.setX(gamepad.right_stick_x);
-                    stick.setY(gamepad.right_stick_y);
+                    if (gamepad.right_stick_x < -0.1f && gamepad.right_stick_x > 0.1f)
+                        stick.setX(gamepad.right_stick_x);
+                    else
+                        stick.setX(0f);
+
+                    if (gamepad.right_stick_y < -0.1f && gamepad.right_stick_y > 0.1f)
+                        stick.setY(gamepad.right_stick_y);
+                    else
+                        stick.setY(0f);
+
                     break;
             }
 
